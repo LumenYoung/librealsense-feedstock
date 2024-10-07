@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Patch the version.h file
+sed -i '1i#include <cstdint>' $SRC_DIR/third-party/rsutils/include/rsutils/version.h
+
 mkdir build && cd build
 
 # Workaround for https://github.com/IntelRealSense/librealsense/issues/8250#issuecomment-768309524
